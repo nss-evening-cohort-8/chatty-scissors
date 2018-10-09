@@ -1,1 +1,1 @@
-console.log('data.js');
+console.log('data.js')
