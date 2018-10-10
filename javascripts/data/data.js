@@ -1,5 +1,5 @@
 import chatbox from "../components/chatbox.js";
-import users from "../components/users.js";
+import {radioButtonsBuilder,users} from "../components/users.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -15,7 +15,7 @@ function executeOnLoad() {
     }
    
     chatbox.messageBuilder();
-    radioButtonBuilder();
+    radioButtonsBuilder();
 }
 
 const loadData = () => {
