@@ -1,4 +1,5 @@
 import chatbox from "../components/chatbox.js";
+import users from "../components/users.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -9,7 +10,12 @@ function executeOnLoad() {
     for (let i =0; i < data.sampleData.length; i++){ 
         chatbox.chatboxText.push(data.sampleData[i])
     }
+    for (let i = 0; i < data.users.length;i++){
+        users.users.push(data.users[i])
+    }
+   
     chatbox.messageBuilder();
+    radioButtonBuilder();
 }
 
 const loadData = () => {

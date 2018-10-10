@@ -10,4 +10,4 @@ const radioButtonsBuilder = () => {
 }
 
 
-export default {radioButtonsBuilder};
+export default {radioButtonsBuilder,users};
