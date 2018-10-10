@@ -1,4 +1,5 @@
 import chatbox from "../components/chatbox.js";
+import users from "../components/users.js"
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -7,10 +8,13 @@ function executeOnError() {
 function executeOnLoad() {
     let data = JSON.parse(this.responseText);
     for (let i =0; i < data.sampleData.length; i++){ 
-        chatbox.chatboxText.push(data.sampleData[i])
+    chatbox.chatboxText.push(data.sampleData[i])
     }
-    chatbox.messageBuilder();
+        console.log(chatbox.chatboxText)
+        console.log(users.users);
 }
+
+// const loadTextArray
 
 const loadData = () => {
     let myRequest = new XMLHttpRequest();
