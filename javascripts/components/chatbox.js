@@ -1,14 +1,14 @@
 import {printToDom} from "../helpers/util";
 
-let messagesArray = [];
+let chatBoxText = [];
 let counter = 0;
 
 const messageBuilder = () => {
     let newMessage = "";
-    for (let i = 0; i < messagesArray.length; i++) {
-    newMessage += `<p id="message${counter}">${messagesArray[i].userName}: `;
-    newMessage += `${messagesArray[i].message} `;
-    newMessage += `${messagesArray[i].timestamp}`
+    for (let i = 0; i < chatBoxText.length; i++) {
+    newMessage += `<p id="message${counter}">${chatBoxText[i].userName}: `;
+    newMessage += `${chatBoxText[i].message} `;
+    newMessage += `${chatBoxText[i].timestamp}`
     newMessage += `</p>`
     }
     counter++;
