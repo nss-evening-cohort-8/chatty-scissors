@@ -1,0 +1,30 @@
+{
+    "users" : ["Charles", "Mary", "Raymond", "Shane", "Dylan"],
+    "sampleData": [
+        {
+        "user": "Charles",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "timestamp": "time stamp in momentJS format"
+        },
+        {
+        "user": "Mary",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "timestamp": "time stamp in momentJS format"
+        },
+        {
+        "user": "Raymond",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "timestamp": "time stamp in momentJS format"
+        },
+        {
+        "user": "Shane",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "timestamp": "time stamp in momentJS format"
+        },
+        {
+        "user": "Dylan",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "timestamp": "time stamp in momentJS format"
+        }
+    ]   
+}
