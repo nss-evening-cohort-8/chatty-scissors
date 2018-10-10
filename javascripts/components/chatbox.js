@@ -1,18 +1,18 @@
-import {printToDom} from "../helpers/util";
+import ptd from "../helpers/util.js"
 
-let chatBoxText = [];
+let chatboxText = [];
 let counter = 0;
 
 const messageBuilder = () => {
-    let newMessage = "";
-    for (let i = 0; i < chatBoxText.length; i++) {
-    newMessage += `<p id="message${counter}">${chatBoxText[i].userName}: `;
-    newMessage += `${chatBoxText[i].message} `;
-    newMessage += `${chatBoxText[i].timestamp}`
+    let newMessage = ""; 
+    for (let i = 0; i < chatboxText.length; i++) {
+    newMessage += `<p id="message${counter}">${chatboxText[i].user}: `;
+    newMessage += `${chatboxText[i].message} `;
+    newMessage += `${chatboxText[i].timestamp}`
     newMessage += `</p>`
     }
+    ptd.printToDom(newMessage, 'message-div')
     counter++;
-    printToDom(newMessage, 'message-div')
-}
+};
 
-export {messageBuilder};
+export default {messageBuilder, chatboxText};
