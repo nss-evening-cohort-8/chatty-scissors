@@ -1,3 +1,5 @@
+import chatbox from "../components/chatbox.js";
+
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
 }
@@ -5,12 +7,10 @@ function executeOnError() {
 function executeOnLoad() {
     let data = JSON.parse(this.responseText);
     for (let i =0; i < data.sampleData.length; i++){ 
-    console.log("User:",data.users[i]); // prints the user at the index value to the console
-    console.log("Sample data object:", data.sampleData[i]); //prints the sample data object at the current index value to the console
+        chatbox.chatboxText.push(data.sampleData[i])
     }
+    chatbox.messageBuilder();
 }
-
-// const loadTextArray
 
 const loadData = () => {
     let myRequest = new XMLHttpRequest();
