@@ -1,18 +1,5 @@
-import {printToDom} from "../helpers/util";
+console.log('chatbox.js');
 
-let messagesArray = [];
-let counter = 0;
+let chatboxText = [];
 
-const messageBuilder = () => {
-    let newMessage = "";
-    for (let i = 0; i < messagesArray.length; i++) {
-    newMessage += `<p id="message${counter}">${messagesArray[i].userName}: `;
-    newMessage += `${messagesArray[i].message} `;
-    newMessage += `${messagesArray[i].timestamp}`
-    newMessage += `</p>`
-    }
-    counter++;
-    printToDom(newMessage, 'message-div')
-}
-
-export {messageBuilder};
+export default {chatboxText};
