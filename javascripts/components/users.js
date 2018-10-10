@@ -13,4 +13,4 @@ const radioButtonsBuilder = () => {
 }
 
 
-export{radioButtonsBuilder};
+export default {radioButtonsBuilder};
