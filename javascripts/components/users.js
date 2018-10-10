@@ -1,6 +1,3 @@
-// console.log('users.js')
-
-
 let users = [];
 
 const radioButtonsBuilder = () => {
