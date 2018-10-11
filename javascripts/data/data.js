@@ -10,8 +10,6 @@ function executeOnLoad() {
     for (let i =0; i < data.sampleData.length; i++){ 
     chatbox.chatboxText.push(data.sampleData[i])
     }
-        console.log(chatbox.chatboxText)
-        console.log(users.users);
 }
 
 // const loadTextArray
