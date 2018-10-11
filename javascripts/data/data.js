@@ -11,11 +11,11 @@ function executeOnLoad() {
         chatbox.chatboxText.push(data.sampleData[i])
     }
     for (let i = 0; i < data.users.length;i++){
-        users.users.push(data.users[i])
+        users.push(data.users[i])
     }
-   
+   console.log(radioButtonsBuilder());
     chatbox.messageBuilder();
-    
+    radioButtonsBuilder();
 }
 
 const loadData = () => {
@@ -26,4 +26,4 @@ const loadData = () => {
     myRequest.send();
 };
 
-export default {loadData};
+export default {loadData,};

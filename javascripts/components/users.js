@@ -1,3 +1,5 @@
+import util from "../helpers/util.js"
+
 let users = [];
 
 const radioButtonsBuilder = () => {
@@ -6,8 +8,11 @@ const radioButtonsBuilder = () => {
         domString +=`<label class="btn btn-secondary active">
         <input type="radio" name="options" id="${users[i]}">${users[i]}
       </label>`};
+      util.printToDom(domString, 'user');
+      
       return domString
+      
 }
 
 
-export default {radioButtonsBuilder,users};
+export {radioButtonsBuilder,users};
