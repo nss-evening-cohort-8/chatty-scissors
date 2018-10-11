@@ -2,8 +2,22 @@ body {
     background-color: lightgray;
 }
 
+.container {
+    width:100%;
+
+}
+
+.container2, .message {
+    display: block;
+    margin-top: 100px;
+    width: 80%;
+}
+
 .darkTheme {
     background-color: darkgray;
     color: white;
 }
 
+.largeTheme {
+    font-size: 1.25em;
+}
