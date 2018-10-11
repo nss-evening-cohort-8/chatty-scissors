@@ -12,73 +12,58 @@
 </head>
 
 <body>
-<!-- 
-    <nav class="users navbar-expand-lg navbar-light bg-light fixed-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <form class="form-inline my-2 my-lg-0">
-            <a class="navbar-brand" href="#">Logo</a>
-            <input class="form-control mr-lg-2 d-flex justify-content-flex-start" id="textbox" size="100%" type="input" placeholder="Enter Message">
-        
-            <button class="btn btn-outline-success my-2 my-sm-0" type="clear">CLEAR</button>
-        </form>
-            <div class="form-check d-flex justify-content">
-                <input class="form-check-input" type="checkbox" value="" id="dark-theme">
-                <label class="form-check-label" for="darkTheme">
-                    Dark Theme
-                </label>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="large-theme">
-                <label class="form-check-label" for="largeTheme">
-                    Large Theme
-                </label>
-
-                <button class= "btn btn-outline-success my-2-sm-0" type = "change">CHANGE THEME</button>
-                
-
+    <nav class="users container navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="row">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="col">
+                    <a class="navbar-brand" href="#">Logo</a>
+                </div>
+                <div class="col">
+                    <input class="form-control mr-lg-2 d-flex justify-content-flex-start" id="text-box" size="100%" type="input" placeholder="Enter Message">
+                </div>
+                <div class="col clear d-flex justify-content-flex-end">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="clear">CLEAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-check  secondnav d-flex justify-content">
+                    <input class="form-check-input" type="checkbox" value="" id="dark-theme">
+                    <label class="form-check-label" for="dark-theme">
+                        Dark Theme
+                    </label>
+                </div>
             </div>
-            
-    </nav> -->
-   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Color Changer!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="large-theme">
+                    <label class="form-check-label" for="large-theme">
+                        Large Theme
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-dark my-2-sm-0" type="change">CHANGE</button>
+            </div>
         </div>
-        <div class="modal-body">Choose what color you'd like to change</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Background Color</button>
-          <button type="button"class="btn btn-primary">Text Color</button>
-          <button type="button"class="btn btn-success">Save</button>
+    </nav>
+    
+    <div id="chat-container" class="container2 mx-auto">
+            <h1>Messages:</h1>
+        <div class="col">
+        <div id="message-div" class="mx-auto message"></div>
         </div>
-      </div>
-    </div>
-  </div>
-    <div id="chat-container" class="none">
-
-        <h1>Messages:</h1>
-
         <div id="user"></div>
-
-        <div id="message-div"></div>
-
+    </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="./javascripts/helpers/events.js" type="module"></script>
     <script src="./javascripts/helpers/util.js" type="module"></script>
     <script src="./javascripts/data/data.js" type="module"></script>
