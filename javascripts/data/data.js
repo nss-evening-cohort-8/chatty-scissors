@@ -1,4 +1,5 @@
 import chatbox from "../components/chatbox.js";
+import timestamps from "../components/timestamps.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -10,6 +11,7 @@ function executeOnLoad() {
         chatbox.chatboxText.push(data.sampleData[i])
     }
     chatbox.messageBuilder();
+    timestamps.getTime();
 }
 
 const loadData = () => {
