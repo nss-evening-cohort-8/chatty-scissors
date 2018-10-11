@@ -13,7 +13,6 @@ function executeOnLoad() {
     for (let i = 0; i < data.users.length;i++){
         users.push(data.users[i])
     }
-   console.log(radioButtonsBuilder());
     chatbox.messageBuilder();
     radioButtonsBuilder();
 }
