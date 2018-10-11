@@ -17,3 +17,7 @@ body {
     background-color: darkgray;
     color: white;
 }
+
+.largeTheme {
+    font-size: 1.25em;
+}
