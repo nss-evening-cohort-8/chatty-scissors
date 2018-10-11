@@ -1,8 +1,9 @@
 import data from "./data/data.js"
-import chatbox from "./components/chatbox.js"
+import events from "./helpers/events.js"
 
 const executeApp = () => {
     data.loadData();
+    events.activateEvents();
 };
 
 executeApp();
