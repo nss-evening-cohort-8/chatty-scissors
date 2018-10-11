@@ -11,7 +11,6 @@ function executeOnLoad() {
         chatbox.chatboxText.push(data.sampleData[i])
     }
     chatbox.messageBuilder();
-    timestamps.getTime();
 }
 
 const loadData = () => {
