@@ -3,4 +3,9 @@ const darkTheme = () => {
   chatContainer.classList.toggle("darkTheme");
 };
 
-export default { darkTheme };
+const largeTheme = () => {
+    let chatContainer = document.getElementById("chat-container");
+    chatContainer.classList.toggle("largeTheme");
+  };
+
+export default { darkTheme, largeTheme };
