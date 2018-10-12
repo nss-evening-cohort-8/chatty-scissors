@@ -4,6 +4,7 @@ import chatbox from "../components/chatbox.js";
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById("large-theme");
 const clearButton = document.getElementById("clear-buton");
+const textBox = document.getElementById("text-box");
 
 darkButton.addEventListener("change", function() {
   if (this.checked) {
@@ -45,7 +46,7 @@ const modalTheme = () => {
 modalTheme();
 
 const clearButtonEvent = () => {
-  clearButton.addEventListener("click", chatbox.clearInput);
+  clearButton.addEventListener("click", chatbox.clearMessages);
 };
 
 const editButtonEvent = () => {
@@ -57,9 +58,17 @@ const editButtonEvent = () => {
   }
 };
 
+const enterButtonEvent = () => {
+  textBox.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log("ENTER");
+    return false;
+    })
+}
+
 const activateEvents = () => {
   clearButtonEvent();
   editButtonEvent();
 };
 
-export default { activateEvents };
+export default { activateEvents, enterButtonEvent };

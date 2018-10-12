@@ -22,8 +22,7 @@ const messageBuilder = () => {
     ptd.printToDom(newMessage, 'message-div')
 };
 
-const clearInput = (e) => {
-    e.preventDefault();
+const clearMessages = () => {
     document.getElementById('message-div').innerHTML = "";
 };
 
@@ -31,10 +30,11 @@ const editText = (e) => {
     let textMessage = e.target.previousElementSibling.innerHTML;
     let textId = e.target.previousElementSibling.id;
     let message = document.getElementById(textId);
+    textBox.focus();
     textBox.value = textMessage;
     textBox.addEventListener("keyup", function() {
         message.innerHTML = event.target.value;
     })
-}    
-
-export default {messageBuilder, chatboxText, clearInput, editText};
+};
+  
+export default {messageBuilder, chatboxText, clearMessages, editText};
