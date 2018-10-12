@@ -24,3 +24,4 @@ const activateEvents = () => {
 };
 
 export default { activateEvents };
+
