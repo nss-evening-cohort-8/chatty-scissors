@@ -1,9 +1,9 @@
 import themes from "../components/themes.js";
+import chatbox from "../components/chatbox.js"
 
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
-
-
+const clearButton = document.getElementById('clear-buton')
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -21,9 +21,37 @@ largeButton.addEventListener('change', function () {
     }
 });
 
-const activateEvents = () => {
+const modalTheme = () => {
+  const modalBack = document.getElementById("modal-background-color");
+  const modalText = document.getElementById("modal-text-color");
+  const modalSubmit = document.getElementById("modal-save");
+  const pageBody = document.getElementsByTagName("body")
 
+
+  modalSubmit.addEventListener("click", () => {
+    if (modalBack.checked === true) {
+      pageBody[0].style.backgroundColor = "#bcddff";
+      console.log("i worked");
+    } else {
+      pageBody[0].style.backgroundColor = "lightgray";
+    }
+    if (modalText.checked === true) {
+      document.getElementById("message-div").style.color = "lightsalmon";
+    } else {
+      document.getElementById("message-div").style.color = "#fff";
+
+    }
+  })
+};
+
+modalTheme()
+
+const clearButtonEvent = () => {
+  clearButton.addEventListener('click', chatbox.clearInput);
+}
+
+const activateEvents = () => {
+  clearButtonEvent();
 };
 
 export default { activateEvents };
-

@@ -8,11 +8,8 @@ const radioButtonsBuilder = () => {
         domString +=`<label class="btn btn-secondary active">
         <input type="radio" name="options" id="${users[i]}">${users[i]}
       </label>`};
-      util.printToDom(domString, 'user');
-      
-      return domString
-      
+      util.printToDom(domString, 'user');      
 }
 
 
-export {radioButtonsBuilder,users};
+export default {radioButtonsBuilder,users};

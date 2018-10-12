@@ -1,5 +1,5 @@
 import chatbox from "../components/chatbox.js";
-import {radioButtonsBuilder,users} from "../components/users.js";
+import users from "../components/users.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -8,15 +8,16 @@ function executeOnError() {
 function executeOnLoad() {
     let data = JSON.parse(this.responseText);
     for (let i =0; i < data.sampleData.length; i++){ 
-        chatbox.chatboxText.push(data.sampleData[i])
+    chatbox.chatboxText.push(data.sampleData[i])
     }
     for (let i = 0; i < data.users.length;i++){
-        users.push(data.users[i])
+        users.users.push(data.users[i])
     }
-   console.log(radioButtonsBuilder());
     chatbox.messageBuilder();
-    radioButtonsBuilder();
+    users.radioButtonsBuilder();
 }
+
+// const loadTextArray
 
 const loadData = () => {
     let myRequest = new XMLHttpRequest();
