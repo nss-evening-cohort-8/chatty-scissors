@@ -60,9 +60,7 @@ const editButtonEvent = () => {
 
 const enterButtonEvent = () => {
   textBox.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log("ENTER");
-    return false;
+    chatbox.editBlur(e);
     })
 }
 

@@ -36,5 +36,12 @@ const editText = (e) => {
         message.innerHTML = event.target.value;
     })
 };
+
+const editBlur = (e) => {
+    e.preventDefault()
+    textBox.blur();
+    textBox.value = "";
+    return false;
+}
   
-export default {messageBuilder, chatboxText, clearMessages, editText};
+export default {messageBuilder, chatboxText, clearMessages, editText, editBlur};
