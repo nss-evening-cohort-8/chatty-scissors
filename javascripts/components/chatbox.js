@@ -12,7 +12,7 @@ const messageBuilder = () => {
     let newMessage = ""; 
     for (let i = 0; i < chatboxText.length; i++) {
     newMessage += `<p id="message${counter}">${chatboxText[i].user}: `;
-    newMessage += `<div>${chatboxText[i].message}</div> `;
+    newMessage += `<div id="text${counter}">${chatboxText[i].message}</div> `;
     newMessage += `${chatboxText[i].timestamp}`;
     newMessage += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
     newMessage += `<button type="button" id="delete${counter}" class="btn btn-danger">Delete</button>`;
@@ -29,7 +29,12 @@ const clearInput = (e) => {
 
 const editText = (e) => {
     let textMessage = e.target.previousElementSibling.innerHTML;
+    let textId = e.target.previousElementSibling.id;
+    let message = document.getElementById(textId);
     textBox.value = textMessage;
-};
+    textBox.addEventListener("keyup", function() {
+        message.innerHTML = event.target.value;
+    })
+}    
 
 export default {messageBuilder, chatboxText, clearInput, editText};
