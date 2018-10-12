@@ -21,7 +21,7 @@ const messageBuilder = () => {
 
 const clearInput = (e) => {
     e.preventDefault();
-    document.getElementById('text-box').value = "";
+    document.getElementById('message-div').innerHTML = "";
     console.log("CLEAR!!!")
 };
 
