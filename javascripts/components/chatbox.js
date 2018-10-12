@@ -12,7 +12,9 @@ const messageBuilder = () => {
     for (let i = 0; i < chatboxText.length; i++) {
     newMessage += `<p id="message${counter}">${chatboxText[i].user}: `;
     newMessage += `${chatboxText[i].message} `;
-    newMessage += `${chatboxText[i].timestamp}`
+    newMessage += `${chatboxText[i].timestamp}`;
+    newMessage += `<button type="button" class="edit${counter}"class="btn btn-secondary">Edit</button>`;
+    newMessage += `<button type="button" class="delete${counter}"class="btn btn-danger">Delete</button>`
     newMessage += `</p>`
     }
     ptd.printToDom(newMessage, 'message-div')
