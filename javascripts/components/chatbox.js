@@ -1,7 +1,10 @@
 import ptd from "../helpers/util.js"
+import timestamps from "./timestamps.js"
 
 let chatboxText = [];
 let counter = 0;
+
+console.log(timestamps.currentTime)
 
 const messageBuilder = () => {
     let newMessage = ""; 
