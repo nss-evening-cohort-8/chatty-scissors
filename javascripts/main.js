@@ -5,7 +5,6 @@ import timestamps from "./components/timestamps.js"
 
 const executeApp = () => {
     data.loadData();
-    events.activateEvents();
 };
 
 executeApp();

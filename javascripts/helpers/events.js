@@ -1,11 +1,11 @@
 import themes from "../components/themes.js";
-import chatbox from "../components/chatbox.js"
+import chatbox from "../components/chatbox.js";
 
 const darkButton = document.getElementById("dark-theme");
-const largeButton = document.getElementById('large-theme');
-const clearButton = document.getElementById('clear-buton')
+const largeButton = document.getElementById("large-theme");
+const clearButton = document.getElementById("clear-buton");
 
-darkButton.addEventListener("change", function () {
+darkButton.addEventListener("change", function() {
   if (this.checked) {
     themes.darkTheme();
   } else {
@@ -13,20 +13,19 @@ darkButton.addEventListener("change", function () {
   }
 });
 
-largeButton.addEventListener('change', function () {
-    if (this.checked) {
-        themes.largeTheme()
-    } else {
-        themes.largeTheme()
-    }
+largeButton.addEventListener("change", function() {
+  if (this.checked) {
+    themes.largeTheme();
+  } else {
+    themes.largeTheme();
+  }
 });
 
 const modalTheme = () => {
   const modalBack = document.getElementById("modal-background-color");
   const modalText = document.getElementById("modal-text-color");
   const modalSubmit = document.getElementById("modal-save");
-  const pageBody = document.getElementsByTagName("body")
-
+  const pageBody = document.getElementsByTagName("body");
 
   modalSubmit.addEventListener("click", () => {
     if (modalBack.checked === true) {
@@ -39,19 +38,28 @@ const modalTheme = () => {
       document.getElementById("message-div").style.color = "lightsalmon";
     } else {
       document.getElementById("message-div").style.color = "#fff";
-
     }
-  })
+  });
 };
 
-modalTheme()
+modalTheme();
 
 const clearButtonEvent = () => {
-  clearButton.addEventListener('click', chatbox.clearInput);
-}
+  clearButton.addEventListener("click", chatbox.clearInput);
+};
+
+const editButtonEvent = () => {
+  let editButtons = document.getElementsByClassName("edit");
+  for (let i = 0; i < editButtons.length; i++) {
+    editButtons[i].addEventListener("click", (e) => {
+      chatbox.editText(e);
+    });
+  }
+};
 
 const activateEvents = () => {
   clearButtonEvent();
+  editButtonEvent();
 };
 
 export default { activateEvents };
