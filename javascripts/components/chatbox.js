@@ -1,7 +1,11 @@
 import ptd from "../helpers/util.js"
+import timestamps from "./timestamps.js"
+import events from "../helpers/events.js"
 
 let chatboxText = [];
 let counter = 0;
+
+console.log(timestamps.currentTime)
 
 const messageBuilder = () => {
     let newMessage = ""; 
@@ -15,4 +19,10 @@ const messageBuilder = () => {
     counter++;
 };
 
-export default {messageBuilder, chatboxText};
+const clearInput = (e) => {
+    e.preventDefault();
+    document.getElementById('message-div').innerHTML = "";
+    console.log("CLEAR!!!")
+};
+
+export default {messageBuilder, chatboxText, clearInput};
