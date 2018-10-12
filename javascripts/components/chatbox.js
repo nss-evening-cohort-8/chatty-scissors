@@ -16,9 +16,9 @@ const messageBuilder = () => {
     newMessage += `<button type="button" class="edit${counter}"class="btn btn-secondary">Edit</button>`;
     newMessage += `<button type="button" class="delete${counter}"class="btn btn-danger">Delete</button>`
     newMessage += `</p>`
+    counter++;
     }
     ptd.printToDom(newMessage, 'message-div')
-    counter++;
 };
 
 const clearInput = (e) => {
