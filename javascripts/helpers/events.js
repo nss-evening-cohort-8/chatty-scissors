@@ -88,10 +88,12 @@ const findMsg = (e) => {
 const returnKey = document.getElementById('text-box');
 returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13 && !chatbox.getEditValue()) {
-      input.navBarReturnKey()
+      input.chatBoxMessageBuilder();
+      chatbox.editBlur(event);
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       chatbox.editBlur(event);
 chatbox.deleteFunct();
+
     }
   });
 
