@@ -444,4 +444,4 @@
 
 })(window, window.document);
 
-export default {ColorPicker}
+export default {ColorPicker};
