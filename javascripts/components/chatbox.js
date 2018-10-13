@@ -65,4 +65,4 @@ const editBlur = () => {
     setEditValue(false);
 }
   
-export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue, deleteFunct};
+export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue, deleteFunct, counter};

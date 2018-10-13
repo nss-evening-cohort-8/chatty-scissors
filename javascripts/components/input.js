@@ -1,23 +1,14 @@
 import util from "../helpers/util.js";
-import chatbox from "./chatbox.js"
 import timestamp from "./timestamps.js"
 
 const messageBox = document.getElementById("message-div");
-
-const navBarReturnKey = () => {
-    let newString = `<div>${document.getElementById('text-box').value}</div>`;
-    
-
-     util.printToDom(newString,'message-div')
-     document.getElementById('text-box').value = ''
-};
+let counter = 5;
 
 const maxMessageLimit = () => {
     if (messageBox.children.length > 20){
         messageBox.removeChild(messageBox.children[0]);
     }
 }
-
 
 const  chatBoxMessageBuilder = () => {
     let selectedUser = ''
@@ -27,11 +18,14 @@ const  chatBoxMessageBuilder = () => {
     selectedUser = user[i].children[0].value
     }
     }    
-     let newString = `<div class = "chatbox-container">`
-     newString += `<p> ${document.getElementById('text-box').value} </p>`
+     let newString = `<div id="message${counter}" class = "chatbox-container">`
      newString += `<p> ${selectedUser}</p>`
-     newString += `<p> ${timestamp.currentTime}</p>`
+     newString += `<div id="text${counter}">${document.getElementById('text-box').value} </div>`
+     newString += `${timestamp.currentTime}`
+     newString += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
+     newString += `<button type="button" id="delete${counter}" class="btn btn-danger delete">Delete</button>`;
      newString += `</div>`
+     counter++;
       
      util.printToDom(newString, 'message-div')
 }
