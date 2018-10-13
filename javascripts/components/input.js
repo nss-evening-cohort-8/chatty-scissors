@@ -1,5 +1,6 @@
 import util from "../helpers/util.js";
 import chatbox from "./chatbox.js"
+import timestamp from "./timestamps.js"
 
 const navBarReturnKey = () => {
     console.log('it works');
@@ -13,19 +14,27 @@ const navBarReturnKey = () => {
 
 };
 
-
-export default {navBarReturnKey};
-
-
 const  chatBoxMessageBuilder = () => {
-    for (let i = 0; i < users.length; i++) { 
-     newString += `<div class = "chat-container">`
-     newString += 
+    let selectedUser = ''
+    let user = document.getElementsByClassName('userSelect')
+    for (let i = 0; i < user.length; i++) { 
+    if(user[i].checked === true) {
+    selectedUser = user[i].value
+    }
+
+    }    
+     let newString = `<div class = "chatbox-container">`
+     newString += `<p> ${document.getElementById('text-box').value} </p>`
+     newString += `<p> ${selectedUser}</p>`
+     newString += `<p> ${timestamp.currentTime}</p>`
+     newString += `</div>`
+      
+     util.printToDom(newString, 'message-div')
 }
-// things I need in this function
-// message builder function in chatbox
-// conditional statement to differentiate return keys
-//timestamp
-// radiobuttons checked
+
+export default {chatBoxMessageBuilder}
+
+// target outertext
+
 
 

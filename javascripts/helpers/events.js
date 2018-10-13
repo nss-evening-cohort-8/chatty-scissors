@@ -67,7 +67,7 @@ const activateEvents = () => {
 const returnKey = document.getElementById('text-box');
 returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
-      input.navBarReturnKey()
+      input.chatBoxMessageBuilder()
 
 chatbox.deleteFunct();
     }
