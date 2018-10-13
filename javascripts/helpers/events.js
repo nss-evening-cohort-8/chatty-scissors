@@ -82,7 +82,6 @@ const editButtonEvent = () => {
 };
 
 const findMsg = (e) => {
-  console.log(e.target);
   e.target.parentNode.remove();
 }
 
