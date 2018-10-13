@@ -3,7 +3,9 @@ import chatbox from "../components/chatbox.js"
 
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
-const clearButton = document.getElementById('clear-buton')
+const clearButton = document.getElementById('clear-buton');
+// const deleteButton = document.getElementsByClassName('btn btn-danger');
+
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -50,8 +52,14 @@ const clearButtonEvent = () => {
   clearButton.addEventListener('click', chatbox.clearInput);
 }
 
+const findMsg = () => {
+  event.target.parentnode.remove();
+}
+
 const activateEvents = () => {
   clearButtonEvent();
+
 };
 
-export default { activateEvents };
+
+export default { activateEvents,findMsg}
