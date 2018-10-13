@@ -24,18 +24,22 @@ const clearMessages = () => {
     document.getElementById('message-div').innerHTML = "";
 };
 
+
+const replaceText = () => {
+    message.innerHTML = textBox.value;
+}
+
+
+let message = ""
+
 const editText = (e) => {
+    textBox.removeEventListener("keyup", replaceText);
     let textMessage = e.target.previousElementSibling.innerHTML;
-    console.log(textMessage);
     let textId = e.target.previousElementSibling.id;
-    console.log(textId);
-    let message = document.getElementById(textId);
-    console.log(message);
+    message = document.getElementById(textId);
     textBox.focus();
     textBox.value = textMessage;
-    textBox.addEventListener("keyup", function() {
-        message.innerHTML = event.target.value;
-    })
+    textBox.addEventListener("keyup", replaceText);
 };
 
 const editBlur = () => {
