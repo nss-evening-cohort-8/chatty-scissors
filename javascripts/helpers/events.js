@@ -8,6 +8,8 @@ const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
 const clearButton = document.getElementById('clear-buton');
 const newHex = document.getElementById("secret-div");
+const messageBox = document.getElementById("message-div");
+
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -87,12 +89,14 @@ const findMsg = (e) => {
 const returnKey = document.getElementById('text-box');
 returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13 && !chatbox.getEditValue()) {
-      input.navBarReturnKey()
+      input.chatBoxMessageBuilder();
+      chatbox.editBlur(event);
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       chatbox.editBlur(event);
     }
-      editButtonEvent();
-      chatbox.deleteFunct();
+    editButtonEvent();
+    chatbox.deleteFunct();
+    input.maxMessageLimit();
   });
 
 const activateEvents = () => {
