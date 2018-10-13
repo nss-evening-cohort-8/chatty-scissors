@@ -8,6 +8,8 @@ const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
 const clearButton = document.getElementById('clear-buton');
 const newHex = document.getElementById("secret-div");
+const messageBox = document.getElementById("message-div");
+
 
 
 darkButton.addEventListener("change", function () {
@@ -95,6 +97,7 @@ returnKey.addEventListener("keyup", function(event) {
 chatbox.deleteFunct();
 
     }
+    input.maxMessageLimit();
   });
 
 const activateEvents = () => {

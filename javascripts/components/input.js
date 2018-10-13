@@ -2,11 +2,22 @@ import util from "../helpers/util.js";
 import chatbox from "./chatbox.js"
 import timestamp from "./timestamps.js"
 
+const messageBox = document.getElementById("message-div");
+
 const navBarReturnKey = () => {
-    console.log('it works');
-     util.printToDom(document.getElementById('text-box').value,'message-div')
+    let newString = `<div>${document.getElementById('text-box').value}</div>`;
+    
+
+     util.printToDom(newString,'message-div')
      document.getElementById('text-box').value = ''
 };
+
+const maxMessageLimit = () => {
+    if (messageBox.children.length > 20){
+        messageBox.removeChild(messageBox.children[0]);
+    }
+}
+
 
 const  chatBoxMessageBuilder = () => {
     let selectedUser = ''
@@ -25,7 +36,4 @@ const  chatBoxMessageBuilder = () => {
      util.printToDom(newString, 'message-div')
 }
 
-export default {chatBoxMessageBuilder}
-
-
-
+export default {chatBoxMessageBuilder, maxMessageLimit}
