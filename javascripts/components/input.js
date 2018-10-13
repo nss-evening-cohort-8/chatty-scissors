@@ -12,15 +12,13 @@ const navBarReturnKey = () => {
      document.getElementById('text-box').value = ''
 };
 
-<<<<<<< HEAD
 const maxMessageLimit = () => {
     if (messageBox.children.length > 20){
         messageBox.removeChild(messageBox.children[0]);
     }
 }
 
-export default {navBarReturnKey, maxMessageLimit};
-=======
+
 const  chatBoxMessageBuilder = () => {
     let selectedUser = ''
     let user = document.getElementsByClassName('userSelect')
@@ -38,8 +36,4 @@ const  chatBoxMessageBuilder = () => {
      util.printToDom(newString, 'message-div')
 }
 
-export default {chatBoxMessageBuilder}
-
-
-
->>>>>>> master
+export default {chatBoxMessageBuilder, maxMessageLimit}
