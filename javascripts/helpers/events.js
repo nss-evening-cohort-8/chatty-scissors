@@ -5,15 +5,10 @@ import color from "./colorpicker.js";
 import util from "./util.js";
 
 const darkButton = document.getElementById("dark-theme");
-<<<<<<< HEAD
 const largeButton = document.getElementById('large-theme');
 const clearButton = document.getElementById('clear-buton');
 const newHex = document.getElementById("secret-div");
 
-=======
-const largeButton = document.getElementById("large-theme");
-const clearButton = document.getElementById("clear-buton");
->>>>>>> master
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -34,8 +29,7 @@ largeButton.addEventListener("change", function() {
 const modalTheme = () => {
   const modalBack = document.getElementById("modal-background-color");
   const modalText = document.getElementById("modal-text-color");
-  const modalSubmit = document.getElementById("modal-save");
-<<<<<<< HEAD
+  const modalSubmit = document.getElementById("modal-save");  
   const modalDefault = document.getElementById("modal-default")
   const backgroundChanger = () => {
     document.getElementById('color-box').innerHTML = "";
@@ -67,23 +61,7 @@ const modalTheme = () => {
     document.body.style.backgroundColor = "lightgray";
     document.getElementById("message-div").style.color ="#fff";
   })
-=======
-  const pageBody = document.getElementsByTagName("body");
 
-  modalSubmit.addEventListener("click", () => {
-    if (modalBack.checked === true) {
-      pageBody[0].style.backgroundColor = "#bcddff";
-      console.log("i worked");
-    } else {
-      pageBody[0].style.backgroundColor = "lightgray";
-    }
-    if (modalText.checked === true) {
-      document.getElementById("message-div").style.color = "lightsalmon";
-    } else {
-      document.getElementById("message-div").style.color = "#fff";
-    }
-  });
->>>>>>> master
 };
 
 modalTheme();
