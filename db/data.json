@@ -3,27 +3,27 @@
     "sampleData": [
         {
         "user": "Charles",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry1.",
         "timestamp": "time stamp in momentJS format"
         },
         {
         "user": "Mary",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry2.",
         "timestamp": "time stamp in momentJS format"
         },
         {
         "user": "Raymond",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry3.",
         "timestamp": "time stamp in momentJS format"
         },
         {
         "user": "Shane",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry4.",
         "timestamp": "time stamp in momentJS format"
         },
         {
         "user": "Dylan",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry5.",
         "timestamp": "time stamp in momentJS format"
         }
     ]   
