@@ -1,5 +1,6 @@
 import chatbox from "../components/chatbox.js";
 import users from "../components/users.js";
+import events from "../helpers/events.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -15,9 +16,8 @@ function executeOnLoad() {
     }
     chatbox.messageBuilder();
     users.radioButtonsBuilder();
+    events.activateEvents();
 }
-
-// const loadTextArray
 
 const loadData = () => {
     let myRequest = new XMLHttpRequest();
