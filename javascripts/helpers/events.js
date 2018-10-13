@@ -11,7 +11,6 @@ const newHex = document.getElementById("secret-div");
 const messageBox = document.getElementById("message-div");
 
 
-
 darkButton.addEventListener("change", function () {
   if (this.checked) {
     themes.darkTheme();
@@ -94,9 +93,9 @@ returnKey.addEventListener("keyup", function(event) {
       chatbox.editBlur(event);
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       chatbox.editBlur(event);
-chatbox.deleteFunct();
-
     }
+    editButtonEvent();
+    chatbox.deleteFunct();
     input.maxMessageLimit();
   });
 
