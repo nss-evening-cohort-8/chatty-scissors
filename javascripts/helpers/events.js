@@ -30,7 +30,7 @@ const modalTheme = () => {
   const modalBack = document.getElementById("modal-background-color");
   const modalText = document.getElementById("modal-text-color");
   const modalSubmit = document.getElementById("modal-save");
-  const pageBody = document.getElementsByTagName("body");
+  const modalDefault = document.getElementById("modal-default")
   const backgroundChanger = () => {
     document.getElementById('color-box').innerHTML = "";
     util.printToDom(`<div id="color-picker" class="cp-default"></div>`, 'color-box')
@@ -54,6 +54,12 @@ const modalTheme = () => {
   modalSubmit.addEventListener("click", () => {
     document.getElementById('color-box').innerHTML = "";
     document.body.style.backgroundColor = newHex.style.backgroundColor;
+    document.getElementById("message-div").style.color = newHex.style.color;
+  })
+  modalDefault.addEventListener("click", () => {
+    document.getElementById('color-box').innerHTML = "";
+    document.body.style.backgroundColor = "lightgray";
+    document.getElementById("message-div").style.color ="#fff";
   })
 };
 
