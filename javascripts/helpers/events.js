@@ -31,18 +31,29 @@ const modalTheme = () => {
   const modalText = document.getElementById("modal-text-color");
   const modalSubmit = document.getElementById("modal-save");
   const pageBody = document.getElementsByTagName("body");
-  const printColorBox = () => {
-    
+  const backgroundChanger = () => {
+    document.getElementById('color-box').innerHTML = "";
     util.printToDom(`<div id="color-picker" class="cp-default"></div>`, 'color-box')
     color.ColorPicker(
       document.getElementById('color-picker'),
       function(hex, hsv, rgb) {
-          newHex.style.backgroundColor = hex;        // #HEX
+        newHex.style.backgroundColor = hex;
     });
   };
-  modalBack.addEventListener("click", printColorBox);
+  const textChanger = () => {
+    document.getElementById('color-box').innerHTML = "";
+    util.printToDom(`<div id="color-picker" class="cp-default"></div>`, 'color-box')
+    color.ColorPicker(
+      document.getElementById('color-picker'),
+      function(hex, hsv, rgb) {
+        newHex.style.color = hex;
+    });
+  };
+  modalBack.addEventListener("click", backgroundChanger);
+  modalText.addEventListener("click", textChanger);
   modalSubmit.addEventListener("click", () => {
-    
+    document.getElementById('color-box').innerHTML = "";
+    document.body.style.backgroundColor = newHex.style.backgroundColor;
   })
 };
 
