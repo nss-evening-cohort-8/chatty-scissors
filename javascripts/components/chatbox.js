@@ -2,6 +2,7 @@ import ptd from "../helpers/util.js"
 import timestamps from "./timestamps.js"
 import events from "../helpers/events.js"
 
+
 let chatboxText = [];
 let counter = 0;
 
@@ -13,13 +14,23 @@ const messageBuilder = () => {
     newMessage += `<p id="message${counter}">${chatboxText[i].user}: `;
     newMessage += `${chatboxText[i].message} `;
     newMessage += `${chatboxText[i].timestamp}`;
-    newMessage += `<button type="button" class="edit${counter} btn btn-secondary">Edit</button>`;
-    newMessage += `<button type="button" class="delete${counter} btn btn-danger">Delete</button>`
+    newMessage += `<button type="button" id="edit${counter}"class="btn btn-secondary">Edit</button>`;
+    newMessage += `<button type="button" id="delete${counter}"class="btn btn-danger delete">Delete</button>`
     newMessage += `</p>`
     counter++;
     }
     ptd.printToDom(newMessage, 'message-div')
+    
+    deleteFunct();
+    
+    
 };
+const deleteFunct = () => {
+    const deleteFunction = document.getElementsByClassName('delete');
+    for(let i =0; i<deleteFunction.length;i++){
+        deleteFunction[i].addEventListener('click',events.findMsg);
+    }
+}
 
 const clearInput = (e) => {
     e.preventDefault();
@@ -27,4 +38,7 @@ const clearInput = (e) => {
     console.log("CLEAR!!!")
 };
 
-export default {messageBuilder, chatboxText, clearInput};
+
+
+
+export default {messageBuilder, chatboxText, clearInput, deleteFunct};
