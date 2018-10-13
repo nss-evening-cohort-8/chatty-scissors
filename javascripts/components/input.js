@@ -12,10 +12,9 @@ const  chatBoxMessageBuilder = () => {
     let selectedUser = ''
     let user = document.getElementsByClassName('userSelect')
     for (let i = 0; i < user.length; i++) { 
-    if(user[i].checked === true) {
-    selectedUser = user[i].value
+    if(user[i].children[0].checked === true) {
+    selectedUser = user[i].children[0].value
     }
-
     }    
      let newString = `<div class = "chatbox-container">`
      newString += `<p> ${document.getElementById('text-box').value} </p>`
@@ -27,8 +26,6 @@ const  chatBoxMessageBuilder = () => {
 }
 
 export default {chatBoxMessageBuilder}
-
-// target outertext
 
 
 
