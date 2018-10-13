@@ -21,14 +21,16 @@ const messageBuilder = () => {
     }
     ptd.printToDom(newMessage, 'message-div')
     
-    const deletefunction = document.getElementsByClassName('delete');
-    for(let i =0; i<deletefunction.length;i++){
-        deletefunction[i].addEventListener('click',events.findMsg);
-    }
+    deleteFunct();
     
     
 };
-
+const deleteFunct = () => {
+    const deleteFunction = document.getElementsByClassName('delete');
+    for(let i =0; i<deleteFunction.length;i++){
+        deleteFunction[i].addEventListener('click',events.findMsg);
+    }
+}
 
 const clearInput = (e) => {
     e.preventDefault();
@@ -39,4 +41,4 @@ const clearInput = (e) => {
 
 
 
-export default {messageBuilder, chatboxText, clearInput};
+export default {messageBuilder, chatboxText, clearInput, deleteFunct};
