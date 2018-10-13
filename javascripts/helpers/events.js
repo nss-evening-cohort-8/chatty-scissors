@@ -9,7 +9,6 @@ const largeButton = document.getElementById('large-theme');
 const clearButton = document.getElementById('clear-buton');
 const newHex = document.getElementById("secret-div");
 
-
 darkButton.addEventListener("change", function () {
   if (this.checked) {
     themes.darkTheme();
@@ -91,8 +90,9 @@ returnKey.addEventListener("keyup", function(event) {
       input.navBarReturnKey()
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       chatbox.editBlur(event);
-chatbox.deleteFunct();
     }
+      editButtonEvent();
+      chatbox.deleteFunct();
   });
 
 const activateEvents = () => {
