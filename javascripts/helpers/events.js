@@ -1,9 +1,11 @@
 import themes from "../components/themes.js";
-import chatbox from "../components/chatbox.js"
+import chatbox from "../components/chatbox.js";
+import input from "../components/input.js";
 
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
 const clearButton = document.getElementById('clear-buton')
+
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -53,5 +55,16 @@ const clearButtonEvent = () => {
 const activateEvents = () => {
   clearButtonEvent();
 };
+
+const returnKey = document.getElementById('text-box');
+returnKey.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      input.navBarReturnKey()
+    }
+  });
+ 
+
+  
+  
 
 export default { activateEvents };
