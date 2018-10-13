@@ -5,9 +5,6 @@ import input from "../components/input.js";
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById("large-theme");
 const clearButton = document.getElementById("clear-buton");
-const textBox = document.getElementById("text-box");
-const textForm = document.getElementById("text-form");
-
 
 darkButton.addEventListener("change", function () {
   if (this.checked) {
@@ -62,14 +59,10 @@ const editButtonEvent = () => {
   }
 };
 
-// const enterButtonEvent = () => {
-//   textBox.addEventListener('keyup', () => {
-//     textForm.addEventListener('submit', (e) => {
-//       e.preventDefault();
-//       chatbox.editBlur(e);
-//     })
-//   })
-// }
+const findMsg = (e) => {
+  console.log(e.target);
+  e.target.parentNode.remove();
+}
 
 const returnKey = document.getElementById('text-box');
 returnKey.addEventListener("keyup", function(event) {
@@ -77,6 +70,7 @@ returnKey.addEventListener("keyup", function(event) {
       input.navBarReturnKey()
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       chatbox.editBlur(event);
+chatbox.deleteFunct();
     }
   });
 
@@ -85,4 +79,4 @@ const activateEvents = () => {
   editButtonEvent();
 };
  
-export default { activateEvents }
+export default { activateEvents,findMsg };

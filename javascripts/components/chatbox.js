@@ -3,9 +3,11 @@ import timestamps from "./timestamps.js"
 import events from "../helpers/events.js"
 
 const textBox = document.getElementById('text-box');
+
 let chatboxText = [];
 let counter = 0;
 let isEdit = false;
+let message = ""
 
 const getEditValue = () => {
     return isEdit;
@@ -18,16 +20,24 @@ const setEditValue = (newValue) => {
 const messageBuilder = () => {
     let newMessage = ""; 
     for (let i = 0; i < chatboxText.length; i++) {
-    newMessage += `<p id="message${counter}">${chatboxText[i].user}: `;
+    newMessage += `<div id="message${counter}">${chatboxText[i].user}: `;
     newMessage += `<div id="text${counter}">${chatboxText[i].message}</div> `;
     newMessage += `${chatboxText[i].timestamp}`;
     newMessage += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
-    newMessage += `<button type="button" id="delete${counter}" class="btn btn-danger">Delete</button>`;
-    newMessage += `</p>`;
+    newMessage += `<button type="button" id="delete${counter}" class="btn btn-danger delete">Delete</button>`;
+    newMessage += `</div>`;
     counter++;
     }
     ptd.printToDom(newMessage, 'message-div')
+    deleteFunct();  
 };
+
+const deleteFunct = () => {
+    const deleteFunction = document.getElementsByClassName('delete');
+    for(let i =0; i<deleteFunction.length;i++){
+        deleteFunction[i].addEventListener('click',events.findMsg);
+    }
+}
 
 const clearMessages = () => {
     document.getElementById('message-div').innerHTML = "";
@@ -38,8 +48,6 @@ const replaceText = () => {
     message.innerHTML = textBox.value;
     }
 }
-
-let message = ""
 
 const editText = (e) => {
     textBox.removeEventListener("keyup", replaceText);
@@ -57,4 +65,4 @@ const editBlur = () => {
     setEditValue(false);
 }
   
-export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue};
+export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue, deleteFunct};
