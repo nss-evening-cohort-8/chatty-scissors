@@ -2,9 +2,12 @@ import themes from "../components/themes.js";
 import chatbox from "../components/chatbox.js";
 import input from "../components/input.js";
 
+
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById('large-theme');
-const clearButton = document.getElementById('clear-buton')
+const clearButton = document.getElementById('clear-buton');
+// const deleteButton = document.getElementsByClassName('btn btn-danger');
+
 
 
 darkButton.addEventListener("change", function () {
@@ -52,14 +55,21 @@ const clearButtonEvent = () => {
   clearButton.addEventListener('click', chatbox.clearInput);
 }
 
+const findMsg = (e) => {
+  e.target.parentNode.remove();
+}
+
 const activateEvents = () => {
   clearButtonEvent();
 };
+
 
 const returnKey = document.getElementById('text-box');
 returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
       input.navBarReturnKey()
+
+chatbox.deleteFunct();
     }
   });
  
@@ -67,4 +77,5 @@ returnKey.addEventListener("keyup", function(event) {
   
   
 
-export default { activateEvents };
+export default { activateEvents,findMsg };
+
