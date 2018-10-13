@@ -6,8 +6,6 @@ const textBox = document.getElementById('text-box');
 let chatboxText = [];
 let counter = 0;
 
-console.log(timestamps.currentTime)
-
 const messageBuilder = () => {
     let newMessage = ""; 
     for (let i = 0; i < chatboxText.length; i++) {
@@ -28,8 +26,11 @@ const clearMessages = () => {
 
 const editText = (e) => {
     let textMessage = e.target.previousElementSibling.innerHTML;
+    console.log(textMessage);
     let textId = e.target.previousElementSibling.id;
+    console.log(textId);
     let message = document.getElementById(textId);
+    console.log(message);
     textBox.focus();
     textBox.value = textMessage;
     textBox.addEventListener("keyup", function() {
@@ -37,11 +38,9 @@ const editText = (e) => {
     })
 };
 
-const editBlur = (e) => {
-    e.preventDefault()
+const editBlur = () => {
     textBox.blur();
     textBox.value = "";
-    return false;
 }
   
 export default {messageBuilder, chatboxText, clearMessages, editText, editBlur};

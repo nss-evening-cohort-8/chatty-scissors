@@ -5,6 +5,7 @@ const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById("large-theme");
 const clearButton = document.getElementById("clear-buton");
 const textBox = document.getElementById("text-box");
+const textForm = document.getElementById("text-form");
 
 darkButton.addEventListener("change", function() {
   if (this.checked) {
@@ -59,9 +60,12 @@ const editButtonEvent = () => {
 };
 
 const enterButtonEvent = () => {
-  textBox.addEventListener('submit', (e) => {
-    chatbox.editBlur(e);
+  textBox.addEventListener('keyup', (e) => {
+    textForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      chatbox.editBlur(e);
     })
+  })
 }
 
 const activateEvents = () => {

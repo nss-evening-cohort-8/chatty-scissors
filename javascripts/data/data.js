@@ -17,10 +17,8 @@ function executeOnLoad() {
     chatbox.messageBuilder();
     users.radioButtonsBuilder();
     events.activateEvents();
-
+    events.enterButtonEvent();
 }
-
-// const loadTextArray
 
 const loadData = () => {
     let myRequest = new XMLHttpRequest();
