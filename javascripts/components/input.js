@@ -6,12 +6,6 @@ const navBarReturnKey = () => {
     console.log('it works');
      util.printToDom(document.getElementById('text-box').value,'message-div')
      document.getElementById('text-box').value = ''
-//      if(returnkey === '13')
-//      input.navBarReturnKey()
-//      else {
-//         stringToPrint = ''
-// };
-
 };
 
 const  chatBoxMessageBuilder = () => {
