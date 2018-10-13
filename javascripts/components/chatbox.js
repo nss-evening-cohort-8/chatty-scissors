@@ -5,6 +5,15 @@ import events from "../helpers/events.js"
 const textBox = document.getElementById('text-box');
 let chatboxText = [];
 let counter = 0;
+let isEdit = false;
+
+const getEditValue = () => {
+    return isEdit;
+};
+
+const setEditValue = (newValue) => {
+    isEdit = newValue;
+};
 
 const messageBuilder = () => {
     let newMessage = ""; 
@@ -24,11 +33,11 @@ const clearMessages = () => {
     document.getElementById('message-div').innerHTML = "";
 };
 
-
 const replaceText = () => {
+    if (textBox.value !== "") {
     message.innerHTML = textBox.value;
+    }
 }
-
 
 let message = ""
 
@@ -45,6 +54,7 @@ const editText = (e) => {
 const editBlur = () => {
     textBox.blur();
     textBox.value = "";
+    setEditValue(false);
 }
   
-export default {messageBuilder, chatboxText, clearMessages, editText, editBlur};
+export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue};

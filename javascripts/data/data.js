@@ -17,7 +17,6 @@ function executeOnLoad() {
     chatbox.messageBuilder();
     users.radioButtonsBuilder();
     events.activateEvents();
-    events.enterButtonEvent();
 }
 
 const loadData = () => {

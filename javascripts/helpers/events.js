@@ -1,5 +1,6 @@
 import themes from "../components/themes.js";
 import chatbox from "../components/chatbox.js";
+import input from "../components/input.js";
 
 const darkButton = document.getElementById("dark-theme");
 const largeButton = document.getElementById("large-theme");
@@ -7,7 +8,8 @@ const clearButton = document.getElementById("clear-buton");
 const textBox = document.getElementById("text-box");
 const textForm = document.getElementById("text-form");
 
-darkButton.addEventListener("change", function() {
+
+darkButton.addEventListener("change", function () {
   if (this.checked) {
     themes.darkTheme();
   } else {
@@ -54,23 +56,33 @@ const editButtonEvent = () => {
   let editButtons = document.getElementsByClassName("edit");
   for (let i = 0; i < editButtons.length; i++) {
     editButtons[i].addEventListener("click", (e) => {
+      chatbox.setEditValue(true);
       chatbox.editText(e);
     });
   }
 };
 
-const enterButtonEvent = () => {
-  textBox.addEventListener('keyup', (e) => {
-    textForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      chatbox.editBlur(e);
-    })
-  })
-}
+// const enterButtonEvent = () => {
+//   textBox.addEventListener('keyup', () => {
+//     textForm.addEventListener('submit', (e) => {
+//       e.preventDefault();
+//       chatbox.editBlur(e);
+//     })
+//   })
+// }
+
+const returnKey = document.getElementById('text-box');
+returnKey.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13 && !chatbox.getEditValue()) {
+      input.navBarReturnKey()
+    } else if (event.keyCode === 13 && chatbox.getEditValue()){
+      chatbox.editBlur(event);
+    }
+  });
 
 const activateEvents = () => {
   clearButtonEvent();
   editButtonEvent();
 };
-
-export default { activateEvents, enterButtonEvent };
+ 
+export default { activateEvents }
