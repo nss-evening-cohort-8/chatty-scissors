@@ -22,9 +22,9 @@ const messageBuilder = () => {
     ptd.printToDom(newMessage, 'message-div')
     
     const deletefunction = document.getElementsByClassName('delete');
-        for(let i =0; i<deletefunction.length;i++){
-            deletefunction[i].addEventListener('click',events.findMsg);
-        }
+    for(let i =0; i<deletefunction.length;i++){
+        deletefunction[i].addEventListener('click',events.findMsg);
+    }
     
     
 };
