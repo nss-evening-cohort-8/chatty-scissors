@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chatty Scissors</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <script type="text/javascript" src="./javascripts/helpers/colorpicker.js"></script>
+    <!-- Color Picker provided by  -->
+    <link rel="stylesheet" type="text/css" href="./themes.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -47,7 +49,7 @@
                 </div>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">CHANGE</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Change Theme</button>
             </div>
         </div>
     
@@ -59,19 +61,19 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Color Selector</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <input type="checkbox" id="modal-background-color"/>
-                <label for="modal-background-color">Change Background Color</label>
-                <input type="checkbox" id="modal-text-color"/>
-                <label for="modal-text-color">Change Text Color</label>
+                <div id="color-box"></div>
+                <button id="modal-background-color" class="btn btn-success">Change Background Color</button>
+                <button id="modal-text-color" class="btn btn-success">Change Text Color</button>
+                
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-default">Default</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal" id="modal-save">Save changes</button>
             </div>
             </div>
@@ -87,6 +89,8 @@
         </div>
         
     </div>
+
+    <div id="secret-div"></div>
 
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
