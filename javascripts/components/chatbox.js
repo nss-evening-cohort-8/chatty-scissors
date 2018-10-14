@@ -19,7 +19,7 @@ const setEditValue = (newValue) => {
 
 const messageBuilder = () => {
     let newMessage = ""; 
-    for (let i = 0; i < chatboxText.length; i++) {
+    for (let i = 0; i < chatboxText.length; i++) { 
     newMessage += `<div id="message${counter}"><p class="message-user">${chatboxText[i].user}:</p> `;
     newMessage += `<div id="text${counter}">${chatboxText[i].message}</div> `;
     newMessage += `${chatboxText[i].timestamp}`;
