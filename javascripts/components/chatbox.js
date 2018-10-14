@@ -51,8 +51,8 @@ const replaceText = () => {
 
 const editText = (e) => {
     textBox.removeEventListener("keyup", replaceText);
-    let textMessage = e.target.previousElementSibling.innerHTML;
-    let textId = e.target.previousElementSibling.id;
+    let textMessage = e.target.previousElementSibling.previousElementSibling.innerHTML;
+    let textId = e.target.previousElementSibling.previousElementSibling.id;
     message = document.getElementById(textId);
     textBox.focus();
     textBox.value = textMessage;
