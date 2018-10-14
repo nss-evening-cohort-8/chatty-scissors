@@ -22,9 +22,9 @@ const messageBuilder = () => {
     for (let i = 0; i < chatboxText.length; i++) { 
     newMessage += `<div id="message${counter}"><p class="message-user">${chatboxText[i].user}:</p> `;
     newMessage += `<div id="text${counter}">${chatboxText[i].message}</div> `;
-    newMessage += `${chatboxText[i].timestamp}`;
-    newMessage += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
-    newMessage += `<button type="button" id="delete${counter}" class="btn btn-danger delete">Delete</button>`;
+    newMessage += `<div class = "font-italic">${chatboxText[i].timestamp}</div>`;
+    newMessage += `<button type="button" id="edit${counter}" class="edit btn btn-secondary btn-sm">Edit</button>`;
+    newMessage += `<button type="button" id="delete${counter}" class="btn btn-danger btn-sm delete">Delete</button>`;
     newMessage += `</div>`;
     counter++;
     }
