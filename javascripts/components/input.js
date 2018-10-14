@@ -17,7 +17,9 @@ const  chatBoxMessageBuilder = () => {
     if(user[i].children[0].checked === true) {
     selectedUser = user[i].children[0].value
     }
-    }    
+    } if (selectedUser === '') {
+        alert('Please select a user name!')
+    } else {
      let newString = `<div id="message${counter}" class = "chatbox-container">`
      newString += `<p> ${selectedUser}</p>`
      newString += `<div id="text${counter}">${document.getElementById('text-box').value} </div>`
@@ -28,6 +30,7 @@ const  chatBoxMessageBuilder = () => {
      counter++;
       
      util.printToDom(newString, 'message-div')
+    }
 }
 
 export default {chatBoxMessageBuilder, maxMessageLimit}
