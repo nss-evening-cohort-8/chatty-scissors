@@ -61,21 +61,19 @@ const profaneFilter = (inputValue) => {
             selectedUser = user[i].children[0].value;
             }
         }
-        if (selectedUser === '') {
-            alert('Please select a user name!')
-        } else {
-        let newString = `<div id="message${counter}" class = "chatbox-container">`;
-        newString += `<p class="message-user"> ${selectedUser}</p>`
-        newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
-        newString += `<div class="font-italic">${timestamp.currentTime}</div>`
-        newString += `</div>`
-        counter++;
-        util.printToDom(newString, 'message-div')
-        events.editButtonEvent();
-        chatbox.deleteFunct();
+        
+            let newString = `<div id="message${counter}" class = "chatbox-container">`;
+            newString += `<p class="message-user"> ${selectedUser}</p>`
+            newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
+            newString += `<div class="font-italic">${timestamp.currentTime}</div>`
+            newString += `</div>`
+            counter++;
+            util.printToDom(newString, 'message-div')
+            events.editButtonEvent();
+            chatbox.deleteFunct();
+        
     }
-    }
-    else {
+    else if (!chatbox.getEditValue()){
         chatBoxMessageBuilder();
         events.editButtonEvent();
         chatbox.deleteFunct();
