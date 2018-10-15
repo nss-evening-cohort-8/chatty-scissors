@@ -1,6 +1,7 @@
 import util from "../helpers/util.js";
-import timestamp from "./timestamps.js"
-import events from "../helpers/events.js"
+import timestamp from "./timestamps.js";
+import events from "../helpers/events.js";
+import chatbox from "./chatbox.js";
 
 const messageBox = document.getElementById("message-div");
 let counter = 5;
@@ -70,11 +71,15 @@ const profaneFilter = (inputValue) => {
         newString += `</div>`
         counter++;
         util.printToDom(newString, 'message-div')
+        events.editButtonEvent();
+        chatbox.deleteFunct();
     }
     }
     else {
         chatBoxMessageBuilder();
         events.editButtonEvent();
+        chatbox.deleteFunct();
+
     }
     validity = false;
 };
