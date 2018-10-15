@@ -27,6 +27,7 @@ body {
     padding: 15px;
     margin-top: 25px;
     margin-bottom: 25px;
+    background-color: #fff;
 }
 
 .edit, .delete {
