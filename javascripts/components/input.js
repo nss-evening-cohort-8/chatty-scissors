@@ -30,13 +30,13 @@ const  chatBoxMessageBuilder = () => {
     }
     } if (selectedUser === '') {
         alert('Please select a user name!')
-    } else {
+    } else { 
      let newString = `<div id="message${counter}" class = "chatbox-container">`
-     newString += `<p class="message-user"> ${selectedUser}</p>`
+     newString += `<p class= "font-weight-bold">${selectedUser}:</p>`
      newString += `<div id="text${counter}">${document.getElementById('text-box').value} </div>`
-     newString += `${timestamp.currentTime}`
-     newString += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
-     newString += `<button type="button" id="delete${counter}" class="btn btn-danger delete">Delete</button>`;
+     newString += `<div class = "font-italic">${timestamp.currentTime}</div>`
+     newString += `<button type="button" id="edit${counter}" class="edit btn btn-secondary btn-sm">Edit</button>`;
+     newString += `<button type="button" id="delete${counter}" class="btn btn-danger btn-sm delete">Delete</button>`;
      newString += `</div>`
      counter++;
       
