@@ -61,7 +61,7 @@ const modalTheme = () => {
   modalDefault.addEventListener("click", () => {
     document.getElementById('color-box').innerHTML = "";
     document.body.style.backgroundColor = "lightgray";
-    document.getElementById("message-div").style.color ="#fff";
+    document.getElementById("message-div").style.color ="#000";
   })
 
 };
