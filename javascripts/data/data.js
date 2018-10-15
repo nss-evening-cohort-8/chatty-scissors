@@ -21,7 +21,6 @@ function executeOnLoad() {
     chatbox.messageBuilder();
     users.radioButtonsBuilder();
     events.activateEvents();
-    console.log(input.profaneArray)
 }
 
 const loadData = () => {
