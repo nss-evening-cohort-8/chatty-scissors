@@ -1,8 +1,21 @@
 import util from "../helpers/util.js";
-import timestamp from "./timestamps.js"
+import timestamp from "./timestamps.js";
+import events from "../helpers/events.js";
+import chatbox from "./chatbox.js";
 
 const messageBox = document.getElementById("message-div");
 let counter = 5;
+let profaneArray = [];
+const charlesArray = [
+    "Charles is king",
+    "Never forget Charles",
+    "Why did Charles have to go!",
+    "I wonder what Charles is up to", 
+    "Charles' car can carry copious cans of candy", 
+    "Charles is my best friend", 
+    "Charles is your best friend",
+    "Obey Charles at all costs"
+]
 
 const maxMessageLimit = () => {
     if (messageBox.children.length > 20){
@@ -33,4 +46,40 @@ const  chatBoxMessageBuilder = () => {
     }
 }
 
-export default {chatBoxMessageBuilder, maxMessageLimit}
+const profaneFilter = (inputValue) => {
+    let validity = false;
+    for (let i = 0; i < profaneArray.length; i++) {
+        if (inputValue.includes(profaneArray[i])) {
+            validity = true;
+        }
+    }
+     if (validity === true) {
+        let selectedUser = "";
+        let user = document.getElementsByClassName('userSelect');
+        for (let i = 0; i < user.length; i++) { 
+        if(user[i].children[0].checked === true) {
+            selectedUser = user[i].children[0].value;
+            }
+        }
+        
+            let newString = `<div id="message${counter}" class = "chatbox-container">`;
+            newString += `<p class="message-user"> ${selectedUser}</p>`
+            newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
+            newString += `<div class="font-italic">${timestamp.currentTime}</div>`
+            newString += `</div>`
+            counter++;
+            util.printToDom(newString, 'message-div')
+            events.editButtonEvent();
+            chatbox.deleteFunct();
+        
+    }
+    else if (!chatbox.getEditValue()){
+        chatBoxMessageBuilder();
+        events.editButtonEvent();
+        chatbox.deleteFunct();
+
+    }
+    validity = false;
+};
+
+export default {chatBoxMessageBuilder, maxMessageLimit, profaneArray, profaneFilter}
