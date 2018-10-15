@@ -11,6 +11,7 @@ const newHex = document.getElementById("secret-div");
 const messageBox = document.getElementById("message-div");
 
 
+
 darkButton.addEventListener("change", function () {
   if (this.checked) {
     themes.darkTheme();
@@ -82,25 +83,29 @@ const editButtonEvent = () => {
 };
 
 const findMsg = (e) => {
+  console.log(e.target);
   e.target.parentNode.remove();
 }
 
 const returnKey = document.getElementById('text-box');
-returnKey.addEventListener("keyup", function(event) {
+const submitFunct = () => {returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13 && !chatbox.getEditValue()) {
-      input.chatBoxMessageBuilder();
+      input.profaneFilter(returnKey.value);
       chatbox.editBlur(event);
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
+      input.profaneFilter(returnKey.value);
+      console.log(returnKey.value);
       chatbox.editBlur(event);
+      chatbox.deleteFunct();
     }
-    editButtonEvent();
-    chatbox.deleteFunct();
     input.maxMessageLimit();
   });
+}
 
 const activateEvents = () => {
   clearButtonEvent();
   editButtonEvent();
+  submitFunct();
 };
  
 export default { activateEvents,findMsg };

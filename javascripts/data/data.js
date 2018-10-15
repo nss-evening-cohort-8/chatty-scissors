@@ -1,6 +1,7 @@
 import chatbox from "../components/chatbox.js";
 import users from "../components/users.js";
 import events from "../helpers/events.js";
+import input from "../components/input.js";
 
 function executeOnError() {
     console.log("ERROR. Please seek immediate assistance");
@@ -14,9 +15,13 @@ function executeOnLoad() {
     for (let i = 0; i < data.users.length;i++){
         users.users.push(data.users[i])
     }
+    for (let i = 0; i < data.badWords.length;i++){
+        input.profaneArray.push(data.badWords[i])
+    }
     chatbox.messageBuilder();
     users.radioButtonsBuilder();
     events.activateEvents();
+    console.log(input.profaneArray)
 }
 
 const loadData = () => {
