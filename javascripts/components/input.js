@@ -66,7 +66,7 @@ const profaneFilter = (inputValue) => {
         let newString = `<div id="message${counter}" class = "chatbox-container">`;
         newString += `<p class="message-user"> ${selectedUser}</p>`
         newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
-        newString += `${timestamp.currentTime}`
+        newString += `<div class="font-italic"${timestamp.currentTime}</div>`
         newString += `</div>`
         counter++;
         util.printToDom(newString, 'message-div')

@@ -42,3 +42,8 @@ body {
 .row {
     margin: 10px 0;
 }
+
+.chatbox-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
