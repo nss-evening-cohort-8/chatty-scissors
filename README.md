@@ -1,5 +1,8 @@
 # Chatty Group Project
-Your group will be creating a chat application. The features your team will build have already been added to your backlog in the "projects" section of this repo. This application should demonstrate your skills in:
+
+## Description
+This project is our second collaborated project in GitHub. We created a chat application that allows the user to edit, delete, and change various themes when putting in a message in the input box located in the nav bar. The message will output to the chat box. We used radio buttons that allow you to select your user prior to creating your message. You are not able to output your message without selecting a user. This project is a compilation of various JavaScript functions. This application demonstrated our skills in: 
+
 - Modular code
 - Dependency chaining
 - Asynchronous code
@@ -13,8 +16,40 @@ Your group will be creating a chat application. The features your team will buil
 * No Grunt errors
 * Use ES6 Modules
 
-## Interacting With Your Product Owner
-Your group has been designated a product owner (one of the instructors). This product owner has the overall vision of the application and must approve your tickets before you start working on them. When you complete the MVP tickets in your backlog, you should reach out to your product owner to recieve tickets for additional features. Note that this project is often used as a portfolio project for students, so you and your team should push yourselves to get to the "game changer" bonus features, but only after you have a strong MVP.
+## Screenshots
+
+![main screenshot](./imgs/chatty-scissors-screenshot.png)
+
+## Technoligies Used
+
+- JavaScript
+- HTML
+- CSS
+- JSON
+- Bootstrap 4
+
+## How to run this project
+
+* Use npm to intall http-server in your terminal:
+
+```sh
+
+npm install -g http-server
+
+```
+
+* Run the server
+
+```sh
+
+hs -p 9999
+
+```
+
+* Open chrome and navigate to:
+
+```
+
+localhost:9999
 
 
-Check out the [simple wireframe](https://app.moqups.com/chortlehoort/uGBbLbK46Y/view/page/a3bd0c733) for this application on Moqups.com. You can make your final interface as fancy as you like, but keep the general layout similar to the wireframe.
