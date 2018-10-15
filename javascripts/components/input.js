@@ -1,5 +1,6 @@
 import util from "../helpers/util.js";
 import timestamp from "./timestamps.js"
+import events from "../helpers/events.js"
 
 const messageBox = document.getElementById("message-div");
 let counter = 5;
@@ -62,7 +63,6 @@ const profaneFilter = (inputValue) => {
         if (selectedUser === '') {
             alert('Please select a user name!')
         } else {
-        console.log("swear filter works");
         let newString = `<div id="message${counter}" class = "chatbox-container">`;
         newString += `<p class="message-user"> ${selectedUser}</p>`
         newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
@@ -74,6 +74,7 @@ const profaneFilter = (inputValue) => {
     }
     else {
         chatBoxMessageBuilder();
+        events.editButtonEvent();
     }
     validity = false;
 };

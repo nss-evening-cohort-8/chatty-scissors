@@ -83,7 +83,6 @@ const editButtonEvent = () => {
 };
 
 const findMsg = (e) => {
-  console.log(e.target);
   e.target.parentNode.remove();
 }
 
@@ -94,7 +93,6 @@ const submitFunct = () => {returnKey.addEventListener("keyup", function(event) {
       chatbox.editBlur(event);
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
       input.profaneFilter(returnKey.value);
-      console.log(returnKey.value);
       chatbox.editBlur(event);
       chatbox.deleteFunct();
     }
@@ -108,4 +106,4 @@ const activateEvents = () => {
   submitFunct();
 };
  
-export default { activateEvents,findMsg };
+export default { activateEvents,findMsg,editButtonEvent };
