@@ -32,7 +32,7 @@ const  chatBoxMessageBuilder = () => {
         alert('Please select a user name!')
     } else {
      let newString = `<div id="message${counter}" class = "chatbox-container">`
-     newString += `<p> ${selectedUser}</p>`
+     newString += `<p class="message-user"> ${selectedUser}</p>`
      newString += `<div id="text${counter}">${document.getElementById('text-box').value} </div>`
      newString += `${timestamp.currentTime}`
      newString += `<button type="button" id="edit${counter}" class="edit btn btn-secondary">Edit</button>`;
@@ -45,25 +45,33 @@ const  chatBoxMessageBuilder = () => {
 }
 
 const profaneFilter = (inputValue) => {
-    if (profaneArray.indexOf(inputValue) > -1) {
+    let validity = false;
+    for (let i = 0; i < profaneArray.length; i++) {
+        if (inputValue.includes(profaneArray[i])) {
+            validity = true;
+        }
+    }
+     if (validity === true) {
         let selectedUser = "";
-        let user = document.getElementsByClassName('userSelect')
+        let user = document.getElementsByClassName('userSelect');
         for (let i = 0; i < user.length; i++) { 
         if(user[i].children[0].checked === true) {
-            selectedUser = user[i].children[0].value
+            selectedUser = user[i].children[0].value;
             }
         }
         console.log("swear filter works");
-        let newString = `<div id="message${counter}" class = "chatbox-container">`
-        newString += `<p class="message-user"> ${selectedUser}</>`
+        let newString = `<div id="message${counter}" class = "chatbox-container">`;
+        newString += `<p class="message-user"> ${selectedUser}</p>`
         newString += `<div id="text${counter}">${charlesArray[(Math.floor((Math.random()*charlesArray.length)+1)-1)]}</div>`
         newString += `${timestamp.currentTime}`
         newString += `</div>`
         counter++;
         util.printToDom(newString, 'message-div')
-    } else {
+    }
+    else {
         chatBoxMessageBuilder();
     }
+    validity = false;
 };
 
 export default {chatBoxMessageBuilder, maxMessageLimit, profaneArray, profaneFilter}
