@@ -43,20 +43,19 @@ const clearMessages = () => {
     document.getElementById('message-div').innerHTML = "";
 };
 
-const replaceText = () => {
-    if (textBox.value !== "") {
-    message.innerHTML = textBox.value;
-    }
+const replaceText = (inputValue) => {
+    message.innerHTML = inputValue;
+    // if (textBox.value !== "") {
+    // message.innerHTML = message;
+    // }
 }
 
 const editText = (e) => {
-    textBox.removeEventListener("keyup", replaceText);
     let textMessage = e.target.previousElementSibling.previousElementSibling.innerHTML;
     let textId = e.target.previousElementSibling.previousElementSibling.id;
     message = document.getElementById(textId);
     textBox.focus();
     textBox.value = textMessage;
-    textBox.addEventListener("keyup", replaceText);
 };
 
 const editBlur = () => {
@@ -65,4 +64,4 @@ const editBlur = () => {
     setEditValue(false);
 }
   
-export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue, deleteFunct, counter};
+export default {messageBuilder, chatboxText, clearMessages, editText, editBlur, getEditValue, setEditValue, deleteFunct, counter, replaceText};
