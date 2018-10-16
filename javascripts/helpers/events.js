@@ -90,12 +90,13 @@ const returnKey = document.getElementById('text-box');
 const submitFunct = () => {returnKey.addEventListener("keyup", function(event) {
     if (event.keyCode === 13 && !chatbox.getEditValue()) {
       input.profaneFilter(returnKey.value);
-      chatbox.editBlur(event);
+      chatbox.editBlur();
     } else if (event.keyCode === 13 && chatbox.getEditValue()){
-      input.profaneFilter(returnKey.value);
-      chatbox.editBlur(event);
+      // input.profaneFilter(returnKey.value);
+      chatbox.replaceText(returnKey.value)
+      chatbox.editBlur();
       chatbox.deleteFunct();
-    }
+}
     input.maxMessageLimit();
   });
 }

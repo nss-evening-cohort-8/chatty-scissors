@@ -77,7 +77,6 @@ const profaneFilter = (inputValue) => {
         chatBoxMessageBuilder();
         events.editButtonEvent();
         chatbox.deleteFunct();
-
     }
     validity = false;
 };
