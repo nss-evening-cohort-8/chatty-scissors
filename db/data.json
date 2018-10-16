@@ -27,28 +27,28 @@
     "sampleData": [
         {
         "user": "Charles",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry1.",
-        "timestamp": "time stamp in momentJS format"
+        "message": "Hey, guys. Bad news. I'm going to the dark side. I'm joining a full time cohort in January.",
+        "timestamp": "Oct 15th 2018, 5:45:59 pm"
         },
         {
         "user": "Mary",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry2.",
-        "timestamp": "time stamp in momentJS format"
+        "message": "That's a crock of shit, Charles!",
+        "timestamp": "Oct 15th 2018, 5:46:15 pm"
         },
         {
         "user": "Raymond",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry3.",
-        "timestamp": "time stamp in momentJS format"
+        "message": "Yeah, man. You're totally fucking us.",
+        "timestamp": "Oct 15th 2018, 5:46:15 pm"
         },
         {
         "user": "Shane",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry4.",
-        "timestamp": "time stamp in momentJS format"
+        "message": "You're such an asshole.",
+        "timestamp": "Oct 15th 2018, 5:46:32 pm"
         },
         {
         "user": "Dylan",
-        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry5.",
-        "timestamp": "time stamp in momentJS format"
+        "message": "Dammit, man! You're leaving us shorthanded!!!",
+        "timestamp": "Oct 15th 2018, 5:46:47 pm"
         }
     ]   
 }
