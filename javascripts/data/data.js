@@ -27,7 +27,7 @@ const loadData = () => {
     let myRequest = new XMLHttpRequest();
     myRequest.addEventListener("load", executeOnLoad);
     myRequest.addEventListener("error", executeOnError);
-    myRequest.open("get", "./db/data.json");
+    myRequest.open("get", "./db/sampleData.json");
     myRequest.send();
 };
 

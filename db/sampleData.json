@@ -1,0 +1,37 @@
+{
+    "users" : ["Charles", "Mary", "Raymond", "Shane", "Dylan"],
+    "badWords" : [
+        "truck",
+        "boat",
+        "code",
+        "clouds",
+        "data"
+        ],
+    "sampleData": [
+        {
+        "user": "Charles",
+        "message": "Hey, guys. Bad news. I'm going to the dark side. I'm joining a full time cohort in January.",
+        "timestamp": "Oct 15th 2018, 5:45:59 pm"
+        },
+        {
+        "user": "Mary",
+        "message": "That's a crock of shit, Charles!",
+        "timestamp": "Oct 15th 2018, 5:46:15 pm"
+        },
+        {
+        "user": "Raymond",
+        "message": "Yeah, man. You're totally fucking us.",
+        "timestamp": "Oct 15th 2018, 5:46:15 pm"
+        },
+        {
+        "user": "Shane",
+        "message": "You're such an asshole.",
+        "timestamp": "Oct 15th 2018, 5:46:32 pm"
+        },
+        {
+        "user": "Dylan",
+        "message": "Dammit, man! You're leaving us shorthanded!!!",
+        "timestamp": "Oct 15th 2018, 5:46:47 pm"
+        }
+    ]   
+}
